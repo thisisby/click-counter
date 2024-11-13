@@ -65,7 +65,7 @@ CREATE TABLE clicks (
 
 ## API Endpoints
 
-### 1. **POST /counter/{bannerID}** - Increment Click Counter
+### 1. **GET /counter/{bannerID}** - Increment Click Counter
 
 - **Description**: This endpoint increments the click counter for a given banner. When the endpoint is hit, a new click is logged for the specified `bannerID`.
 - **Method**: `GET`
@@ -104,7 +104,9 @@ curl -X GET "http://localhost:8080/api/v1/counter/634dfb86-f492-4f12-b524-2b3d35
 #### Example Request:
 
 ```bash
-curl -X POST "http://localhost:8080/stats/banner123"      -H "Content-Type: application/json"      -d '{
+curl -X POST "http://localhost:8080/api/v1/stats/634dfb86-f492-4f12-b524-2b3d35f2c5a3" \
+        -H "Content-Type: application/json"      
+        -d '{
            "tsFrom": "2024-11-12T00:00:00Z", 
            "tsTo": "2024-11-14T00:00:00Z"
          }'
@@ -186,16 +188,18 @@ You can use `curl` to test the API endpoints.
 ### To Record a Click:
 
 ```bash
-curl -X GET "http://localhost:8080/counter/banner123"
+curl -X GET "http://localhost:8080/api/v1/counter/634dfb86-f492-4f12-b524-2b3d35f2c5a3"
 ```
 
 ### To Get Click Statistics:
 
 ```bash
-curl -X POST "http://localhost:8080/stats/banner123"      -H "Content-Type: application/json"      -d '{
-           "tsFrom": "2024-11-12T00:00:00Z", 
-           "tsTo": "2024-11-14T00:00:00Z"
-         }'
+curl -X POST "http://localhost:8080/api/v1/stats/634dfb86-f492-4f12-b524-2b3d35f2c5a3" \     
+          -H "Content-Type: application/json" \     
+          -d '{
+               "tsFrom": "2024-11-12T00:00:00Z", 
+               "tsTo": "2024-11-14T00:00:00Z"
+             }'
 ```
 
 ---
