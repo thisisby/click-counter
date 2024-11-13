@@ -1,0 +1,14 @@
+env: development
+
+# server
+host: localhost
+port: 8080
+
+# database
+db_host: localhost
+db_port: 5432
+db_user: postgres
+db_password: 0
+db_name: ecom_test_task
+
+
