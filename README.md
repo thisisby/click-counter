@@ -1,5 +1,5 @@
 
-# Click Counter Service
+# Click Counter Service (Pre Interview test task)
 
 This is a simple API service built in Go that allows counting and retrieving statistics of clicks on banners. The service keeps track of clicks in a PostgreSQL database and supports querying click statistics for banners over specified time ranges.
 
